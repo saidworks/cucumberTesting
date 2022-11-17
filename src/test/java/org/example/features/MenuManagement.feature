@@ -1,4 +1,9 @@
 Feature: Menu Management
+
+  Background: add a chicken sandwich
+    Given I have a menu with name "Chicken Sandwich" and price $20
+    When I add that menu item
+    Then Menu Item with name "Chicken Sandwich" should be added
   @SmokeTest
   Scenario: Add a menu item
     Given I have a menu with name "Cucumber Sandwich" and price $20
@@ -15,4 +20,4 @@ Feature: Menu Management
   Scenario: add a third item
     Given I have a menu with name "Chicken Sandwich" and price $20
     When I add that menu item
-    Then Menu Item with name "Chicken Sandwich" should be added
+    Then I should an error message with value "Duplicate Item"

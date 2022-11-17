@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="0" name="org.example.testrunners.MenuManagementTestRunner" time="0.058" errors="0" skipped="0">
+<testsuite tests="3" failures="1" name="org.example.testrunners.MenuManagementTestRunner" time="0.067" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="11.0.16.1+9-LTS"/>
@@ -45,7 +45,7 @@
     <property name="java.class.path" value="C:\DEV_ENV\apache-maven-3.8.6\boot\plexus-classworlds-2.6.0.jar"/>
     <property name="java.vm.specification.version" value="11"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean install"/>
     <property name="java.home" value="C:\Program Files\Amazon Corretto\jdk11.0.16_9"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -65,6 +65,39 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="Menu Management" name="Add a menu item" time="0.056"/>
-  <testcase classname="Menu Management" name="add a third item" time="0.002"/>
+  <testcase classname="Menu Management" name="Add a menu item" time="0.054"/>
+  <testcase classname="Menu Management" name="Add another item" time="0.004"/>
+  <testcase classname="Menu Management" name="add a third item" time="0.009">
+    <failure message="expected:&lt;Duplicate Item&gt; but was:&lt;null&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;Duplicate Item&gt; but was:&lt;null&gt;
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at org.example.stepdefinitions.MenuManagementStepDefinitions.i_should_an_error_message_with_value(MenuManagementStepDefinitions.java:47)
+	at ✽.I should an error message with value &quot;Duplicate Item&quot;(file:///C:/Users/zitou/Desktop/Workspace/BDD/cucumber/src/test/java/org/example/features/MenuManagement.feature:23)
+</failure>
+    <system-out>
+@NightlyBuildTest @RegularTest
+Scenario: add a third item                                       &amp;#27;[90m# src/test/java/org/example/features/MenuManagement.feature:20&amp;#27;[0m
+Step 1
+  &amp;#27;[32mGiven &amp;#27;[0m&amp;#27;[32mI have a menu with name &quot;&amp;#27;[0m&amp;#27;[32m&amp;#27;[1mChicken Sandwich&amp;#27;[0m&amp;#27;[32m&quot; and price &amp;#27;[0m&amp;#27;[32m&amp;#27;[1m$&amp;#27;[0m&amp;#27;[32m&amp;#27;[0m&amp;#27;[32m&amp;#27;[1m20&amp;#27;[0m &amp;#27;[90m# org.example.stepdefinitions.MenuManagementStepDefinitions.i_have_a__menu_item_with_name_and_price(java.lang.String,java.lang.String,java.lang.Integer)&amp;#27;[0m
+Step 2
+  &amp;#27;[32mWhen &amp;#27;[0m&amp;#27;[32mI add that menu item&amp;#27;[0m                                      &amp;#27;[90m# org.example.stepdefinitions.MenuManagementStepDefinitions.i_add_that_menu_item()&amp;#27;[0m
+Step 3
+  &amp;#27;[32mThen &amp;#27;[0m&amp;#27;[32mMenu Item with name &amp;#27;[0m&amp;#27;[32m&amp;#27;[1m&quot;Chicken Sandwich&quot;&amp;#27;[0m&amp;#27;[32m should be added&amp;#27;[0m    &amp;#27;[90m# org.example.stepdefinitions.MenuManagementStepDefinitions.doesItemExists(java.lang.String)&amp;#27;[0m
+Step 1
+  &amp;#27;[32mGiven &amp;#27;[0m&amp;#27;[32mI have a menu with name &quot;&amp;#27;[0m&amp;#27;[32m&amp;#27;[1mChicken Sandwich&amp;#27;[0m&amp;#27;[32m&quot; and price &amp;#27;[0m&amp;#27;[32m&amp;#27;[1m$&amp;#27;[0m&amp;#27;[32m&amp;#27;[0m&amp;#27;[32m&amp;#27;[1m20&amp;#27;[0m &amp;#27;[90m# org.example.stepdefinitions.MenuManagementStepDefinitions.i_have_a__menu_item_with_name_and_price(java.lang.String,java.lang.String,java.lang.Integer)&amp;#27;[0m
+Step 2
+  &amp;#27;[32mWhen &amp;#27;[0m&amp;#27;[32mI add that menu item&amp;#27;[0m                                      &amp;#27;[90m# org.example.stepdefinitions.MenuManagementStepDefinitions.i_add_that_menu_item()&amp;#27;[0m
+  &amp;#27;[31mThen &amp;#27;[0m&amp;#27;[31mI should an error message with value &amp;#27;[0m&amp;#27;[31m&amp;#27;[1m&quot;Duplicate Item&quot;&amp;#27;[0m     &amp;#27;[90m# org.example.stepdefinitions.MenuManagementStepDefinitions.i_should_an_error_message_with_value(java.lang.String)&amp;#27;[0m
+      &amp;#27;[31mjava.lang.AssertionError: expected:&lt;Duplicate Item&gt; but was:&lt;null&gt;
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at org.example.stepdefinitions.MenuManagementStepDefinitions.i_should_an_error_message_with_value(MenuManagementStepDefinitions.java:47)
+	at âœ½.I should an error message with value &quot;Duplicate Item&quot;(file:///C:/Users/zitou/Desktop/Workspace/BDD/cucumber/src/test/java/org/example/features/MenuManagement.feature:23)
+&amp;#27;[0m
+</system-out>
+  </testcase>
 </testsuite>

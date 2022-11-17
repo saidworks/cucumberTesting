@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="0.123">
+    <testcase classname="Datatable" name="Bill Amount Generation" time="0.029">
+        <system-out>
+            <![CDATA[Given I placed an order for the following "Cucumber sandwich" with 2 and 40 "$".passed
+When I generate the bill....................................................passed
+Then a bill for $40 should be generated.....................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Datatable" name="Bill Amount Generation 2" time="0.001">
+        <system-out>
+            <![CDATA[Given I placed an order for the following "Carrot salad" with 3 and 30 "$"..passed
+When I generate the bill....................................................passed
+Then a bill for $40 should be generated.....................................passed
+]]>
+        </system-out>
+    </testcase>
+</testsuite>

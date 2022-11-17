@@ -1,4 +1,13 @@
 -------------------------------------------------------------------------------
 Test set: org.example.testrunners.MenuManagementTestRunner
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.34 sec
+Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.356 sec <<< FAILURE!
+add a third item(Menu Management)  Time elapsed: 0.009 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<Duplicate Item> but was:<null>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at org.example.stepdefinitions.MenuManagementStepDefinitions.i_should_an_error_message_with_value(MenuManagementStepDefinitions.java:47)
+	at ?.I should an error message with value "Duplicate Item"(file:///C:/Users/zitou/Desktop/Workspace/BDD/cucumber/src/test/java/org/example/features/MenuManagement.feature:23)
+

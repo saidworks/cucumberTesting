@@ -8,8 +8,14 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = {"src/test/java/org/example/features"},
         glue = {"org.example.stepdefinitions"},
-        tags= "@NightlyBuildTest or not @RegularTest",
-        plugin = {"pretty"}
+        tags= "@ListOfStrings",
+        plugin = {"pretty",
+                "html:target/testReports/html",
+                "json:target/testReports/json/report.json",
+                "junit:target/testReports/junit/report.xml"
+        },
+        dryRun = false,
+        monochrome = false
 )
 public class MenuManagementTestRunner {
 }
